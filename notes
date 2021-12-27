@@ -1,0 +1,30 @@
+##Concepts to remember
+
+# Use map() to render content of an existing array in a component
+  EX: const options = ['Thing one', 'Thing two', 'Thing three'];
+      <Options options={options}/>
+      class Options extends React.Component {
+        render() {
+          return  (
+            <div>
+              <ul>
+              {
+                this.props.options.map((option) => <Option key={option} optionText={option} />)
+              }
+              </ul>
+            </div>
+          )
+        }
+      }
+
+# this.props.whatever accesses whatever has been passed into the component 
+  EX:<Header title={title}>
+      class Header extends React.Component {
+        render() {
+          return (
+            <div>
+              <h1>{this.props.title}</h1>
+            </div>
+          )
+        }
+      }
